@@ -1,0 +1,225 @@
+##############################################################
+
+
+#  Many thanks to the Dwenguino folks for creating a
+#  framework that made it easier to support the AT90USB646 &
+#  AT90USB1286 controllers supported by Marlin
+
+#  Many thanks to ?? for providing an elegant bootloader system.
+
+##############################################################
+
+#  EXPERIMENTAL
+
+#   VARIENT_FLAG (build.variant.flag) was created to allow the
+#   pins_xxx.h files to select the pin definitions based on the
+#   variant being used.
+
+#   Tried to use VARIANT (build.variant) as a flag but its value
+#   was set in the variant file.  That happens after the pins_xxx.h
+#   file is processed.  The results was VARIANT was always zero
+#   when the pins_xxx.h file is processed.
+
+#   VARIENT_FLAG is set when the boards.txt file is processed. This
+#   happens before the pins_xxx.h file is processed.
+
+#   Current definitions:
+#      2 - FASTIO_TEENSYPP
+#      3 - FASTIO_STANDARD
+
+##############################################################
+
+#  uses TEENSYPP pinout (48 pin version)
+
+#  for Marlin enable (uncomment) the AT90USBxx_TEENSYPP_ASSIGNMENTS flag in FASTIO.H
+
+AT90USB1286_TEENSYPP.name=AT90USB1286_TEENSYPP
+AT90USB1286_TEENSYPP.upload.maximum_size=129024
+AT90USB1286_TEENSYPP.upload.maximum_data_size=8192
+AT90USB1286_TEENSYPP.upload.tool=HIDuploader
+AT90USB1286_TEENSYPP.upload.protocol=
+AT90USB1286_TEENSYPP.bootloader.tool=arduino:avrdude
+AT90USB1286_TEENSYPP.bootloader.low_fuses=0xDE
+AT90USB1286_TEENSYPP.bootloader.high_fuses=0xDB
+AT90USB1286_TEENSYPP.bootloader.extended_fuses=0xF0
+AT90USB1286_TEENSYPP.bootloader.path=
+AT90USB1286_TEENSYPP.bootloader.unlock_bits=
+AT90USB1286_TEENSYPP.bootloader.lock_bits=
+AT90USB1286_TEENSYPP.bootloader.file=BootloaderHID.hex
+AT90USB1286_TEENSYPP.build.board=AT90USB1286_TEENSYPP
+AT90USB1286_TEENSYPP.build.core=FASTIO
+AT90USB1286_TEENSYPP.build.variant=FASTIO_TEENSYPP
+AT90USB1286_TEENSYPP.build.variant.flag=2
+AT90USB1286_TEENSYPP.build.mcu=at90usb1286
+AT90USB1286_TEENSYPP.build.warn_data_percentage=94
+AT90USB1286_TEENSYPP.build.toolchain=avr/bin/
+AT90USB1286_TEENSYPP.build.command.gcc=avr-gcc
+AT90USB1286_TEENSYPP.build.command.g++=avr-g++
+AT90USB1286_TEENSYPP.build.command.ar=avr-ar
+AT90USB1286_TEENSYPP.build.command.objcopy=avr-objcopy
+AT90USB1286_TEENSYPP.build.command.objdump=avr-objdump
+AT90USB1286_TEENSYPP.build.command.size=avr-size
+AT90USB1286_TEENSYPP.build.flags.common=-g -Wall -ffunction-sections -fdata-sections
+AT90USB1286_TEENSYPP.build.flags.dep=-MMD
+AT90USB1286_TEENSYPP.build.flags.optimize=-Os
+AT90USB1286_TEENSYPP.build.flags.cpu=-mmcu=at90usb1286
+AT90USB1286_TEENSYPP.build.flags.defs=-DTEENSYPPDUINO=127
+AT90USB1286_TEENSYPP.build.flags.cpp=-fno-exceptions -felide-constructors -std=c++0x
+AT90USB1286_TEENSYPP.build.flags.c=
+AT90USB1286_TEENSYPP.build.flags.S=-x assembler-with-cpp
+AT90USB1286_TEENSYPP.build.flags.ld=-Wl,--gc-sections,--relax
+AT90USB1286_TEENSYPP.build.flags.ldspecs=
+AT90USB1286_TEENSYPP.build.flags.libs=-lm
+AT90USB1286_TEENSYPP.build.serial_number=true
+AT90USB1286_TEENSYPP.serial.restart_cmd=true
+
+AT90USB1286_TEENSYPP.build.usbtype=USB_SERIAL
+AT90USB1286_TEENSYPP.build.f_cpu=16000000L
+AT90USB1286_TEENSYPP.build.keylayout=US_ENGLISH
+AT90USB1286_TEENSYPP.build.vid=0xd3e0
+AT90USB1286_TEENSYPP.build.pid=0x601a
+AT90USB1286_TEENSYPP.usb_product="Dwenguino Board"
+AT90USB1286_TEENSYPP.extra_flags={build.usb_flags}
+
+AT90USB646_TEENSYPP.name=AT90USB646_TEENSYPP
+AT90USB646_TEENSYPP.upload.maximum_size=63488
+AT90USB646_TEENSYPP.upload.maximum_data_size=4096
+AT90USB646_TEENSYPP.upload.tool=HIDuploader
+AT90USB646_TEENSYPP.upload.protocol=
+AT90USB646_TEENSYPP.bootloader.tool=arduino:avrdude
+AT90USB646_TEENSYPP.bootloader.low_fuses=0xDE
+AT90USB646_TEENSYPP.bootloader.high_fuses=0xDB
+AT90USB646_TEENSYPP.bootloader.extended_fuses=0xF0
+AT90USB646_TEENSYPP.bootloader.path=
+AT90USB646_TEENSYPP.bootloader.unlock_bits=
+AT90USB646_TEENSYPP.bootloader.lock_bits=
+AT90USB646_TEENSYPP.bootloader.file=BootloaderHID.hex
+AT90USB646_TEENSYPP.build.board=AT90USB646_TEENSYPP
+AT90USB646_TEENSYPP.build.core=FASTIO
+AT90USB646_TEENSYPP.build.variant=FASTIO_TEENSYPP
+AT90USB646_TEENSYPP.build.variant.flag=2
+AT90USB646_TEENSYPP.build.mcu=at90usb646
+AT90USB646_TEENSYPP.build.warn_data_percentage=94
+AT90USB646_TEENSYPP.build.toolchain=avr/bin/
+AT90USB646_TEENSYPP.build.command.gcc=avr-gcc
+AT90USB646_TEENSYPP.build.command.g++=avr-g++
+AT90USB646_TEENSYPP.build.command.ar=avr-ar
+AT90USB646_TEENSYPP.build.command.objcopy=avr-objcopy
+AT90USB646_TEENSYPP.build.command.objdump=avr-objdump
+AT90USB646_TEENSYPP.build.command.size=avr-size
+AT90USB646_TEENSYPP.build.flags.common=-g -Wall -ffunction-sections -fdata-sections
+AT90USB646_TEENSYPP.build.flags.dep=-MMD
+AT90USB646_TEENSYPP.build.flags.optimize=-Os
+AT90USB646_TEENSYPP.build.flags.cpu=-mmcu=at90usb646
+AT90USB646_TEENSYPP.build.flags.defs=-DTEENSYPPDUINO=127
+AT90USB646_TEENSYPP.build.flags.cpp=-fno-exceptions -felide-constructors -std=c++0x
+AT90USB646_TEENSYPP.build.flags.c=
+AT90USB646_TEENSYPP.build.flags.S=-x assembler-with-cpp
+AT90USB646_TEENSYPP.build.flags.ld=-Wl,--gc-sections,--relax
+AT90USB646_TEENSYPP.build.flags.ldspecs=
+AT90USB646_TEENSYPP.build.flags.libs=-lm
+AT90USB646_TEENSYPP.build.serial_number=true
+AT90USB646_TEENSYPP.serial.restart_cmd=true
+
+AT90USB646_TEENSYPP.build.usbtype=USB_SERIAL
+AT90USB646_TEENSYPP.build.f_cpu=16000000L
+AT90USB646_TEENSYPP.build.keylayout=US_ENGLISH
+
+
+##############################################################
+
+#  uses "Standard" pinout
+
+#  for Marlin disable (comment out) the AT90USBxx_TEENSYPPPP_ASSIGNMENTS flag in FASTIO.H
+
+AT90USB1286_STANDARD.name=AT90USB1286_STANDARD
+AT90USB1286_STANDARD.upload.maximum_size=129024
+AT90USB1286_STANDARD.upload.maximum_data_size=8192
+AT90USB1286_STANDARD.upload.tool=HIDuploader
+AT90USB1286_STANDARD.upload.protocol=
+AT90USB1286_STANDARD.bootloader.tool=arduino:avrdude
+AT90USB1286_STANDARD.bootloader.low_fuses=0xDE
+AT90USB1286_STANDARD.bootloader.high_fuses=0xDB
+AT90USB1286_STANDARD.bootloader.extended_fuses=0xF0
+AT90USB1286_STANDARD.bootloader.path=
+AT90USB1286_STANDARD.bootloader.unlock_bits=
+AT90USB1286_STANDARD.bootloader.lock_bits=
+AT90USB1286_STANDARD.bootloader.file=BootloaderHID.hex
+AT90USB1286_STANDARD.build.board=AT90USB1286_STANDARD
+AT90USB1286_STANDARD.build.core=FASTIO
+AT90USB1286_STANDARD.build.variant=FASTIO_STANDARD
+AT90USB1286_STANDARD.build.variant.flag=3
+AT90USB1286_STANDARD.build.mcu=at90usb1286
+AT90USB1286_STANDARD.build.warn_data_percentage=94
+AT90USB1286_STANDARD.build.toolchain=avr/bin/
+AT90USB1286_STANDARD.build.command.gcc=avr-gcc
+AT90USB1286_STANDARD.build.command.g++=avr-g++
+AT90USB1286_STANDARD.build.command.ar=avr-ar
+AT90USB1286_STANDARD.build.command.objcopy=avr-objcopy
+AT90USB1286_STANDARD.build.command.objdump=avr-objdump
+AT90USB1286_STANDARD.build.command.size=avr-size
+AT90USB1286_STANDARD.build.flags.common=-g -Wall -ffunction-sections -fdata-sections
+AT90USB1286_STANDARD.build.flags.dep=-MMD
+AT90USB1286_STANDARD.build.flags.optimize=-Os
+AT90USB1286_STANDARD.build.flags.cpu=-mmcu=at90usb1286
+AT90USB1286_STANDARD.build.flags.defs=-DSTANDARDDUINO=127
+AT90USB1286_STANDARD.build.flags.cpp=-fno-exceptions -felide-constructors -std=c++0x
+AT90USB1286_STANDARD.build.flags.c=
+AT90USB1286_STANDARD.build.flags.S=-x assembler-with-cpp
+AT90USB1286_STANDARD.build.flags.ld=-Wl,--gc-sections,--relax
+AT90USB1286_STANDARD.build.flags.ldspecs=
+AT90USB1286_STANDARD.build.flags.libs=-lm
+AT90USB1286_STANDARD.build.serial_number=true
+AT90USB1286_STANDARD.serial.restart_cmd=true
+
+AT90USB1286_STANDARD.build.usbtype=USB_SERIAL
+AT90USB1286_STANDARD.build.f_cpu=16000000L
+AT90USB1286_STANDARD.build.keylayout=US_ENGLISH
+AT90USB1286_STANDARD.build.vid=0xd3e0
+AT90USB1286_STANDARD.build.pid=0x601a
+AT90USB1286_STANDARD.usb_product="Dwenguino Board"
+AT90USB1286_STANDARD.extra_flags={build.usb_flags}
+
+AT90USB646_STANDARD.name=AT90USB646_STANDARD
+AT90USB646_STANDARD.upload.maximum_size=63488
+AT90USB646_STANDARD.upload.maximum_data_size=4096
+AT90USB646_STANDARD.upload.tool=HIDuploader
+AT90USB646_STANDARD.upload.protocol=
+AT90USB646_STANDARD.bootloader.tool=arduino:avrdude
+AT90USB646_STANDARD.bootloader.low_fuses=0xDE
+AT90USB646_STANDARD.bootloader.high_fuses=0xDB
+AT90USB646_STANDARD.bootloader.extended_fuses=0xF0
+AT90USB646_STANDARD.bootloader.path=
+AT90USB646_STANDARD.bootloader.unlock_bits=
+AT90USB646_STANDARD.bootloader.lock_bits=
+AT90USB646_STANDARD.bootloader.file=BootloaderHID.hex
+AT90USB646_STANDARD.build.board=AT90USB646_STANDARD
+AT90USB646_STANDARD.build.core=FASTIO
+AT90USB646_STANDARD.build.variant=FASTIO_STANDARD
+AT90USB646_STANDARD.build.variant.flag=3
+AT90USB646_STANDARD.build.mcu=at90usb646
+AT90USB646_STANDARD.build.warn_data_percentage=94
+AT90USB646_STANDARD.build.toolchain=avr/bin/
+AT90USB646_STANDARD.build.command.gcc=avr-gcc
+AT90USB646_STANDARD.build.command.g++=avr-g++
+AT90USB646_STANDARD.build.command.ar=avr-ar
+AT90USB646_STANDARD.build.command.objcopy=avr-objcopy
+AT90USB646_STANDARD.build.command.objdump=avr-objdump
+AT90USB646_STANDARD.build.command.size=avr-size
+AT90USB646_STANDARD.build.flags.common=-g -Wall -ffunction-sections -fdata-sections
+AT90USB646_STANDARD.build.flags.dep=-MMD
+AT90USB646_STANDARD.build.flags.optimize=-Os
+AT90USB646_STANDARD.build.flags.cpu=-mmcu=at90usb646
+AT90USB646_STANDARD.build.flags.defs=-DSTANDARDDUINO=127
+AT90USB646_STANDARD.build.flags.cpp=-fno-exceptions -felide-constructors -std=c++0x
+AT90USB646_STANDARD.build.flags.c=
+AT90USB646_STANDARD.build.flags.S=-x assembler-with-cpp
+AT90USB646_STANDARD.build.flags.ld=-Wl,--gc-sections,--relax
+AT90USB646_STANDARD.build.flags.ldspecs=
+AT90USB646_STANDARD.build.flags.libs=-lm
+AT90USB646_STANDARD.build.serial_number=true
+AT90USB646_STANDARD.serial.restart_cmd=true
+
+AT90USB646_STANDARD.build.usbtype=USB_SERIAL
+AT90USB646_STANDARD.build.f_cpu=16000000L
+AT90USB646_STANDARD.build.keylayout=US_ENGLISH
