@@ -21,46 +21,46 @@ rewriting=disabled
 
 ##############################################################
 
-compiler.path={runtime.tools.avr-gcc.path}/../
+compiler.path={runtime.tools.avr-gcc.path}/bin/
 compiler.objcopy.eep.flags=-O ihex -j .eeprom --set-section-flags=.eeprom=alloc,load --no-change-warnings --change-section-lma .eeprom=0
 compiler.elf2hex.flags=-O ihex -R .eeprom
 
 ## Preprocessor Includes
-recipe.preproc.includes="{compiler.path}{build.toolchain}{build.command.g++}" -M -MG -MP -x c++ -w {build.flags.cpp} {build.flags.cpu} {build.flags.defs} -DARDUINO={runtime.ide.version} -DF_CPU={build.fcpu}  -DVARIANT={build.variant}   -DVARIANT_FLAG={build.variant.flag}   -DARDUINO_ARCH_AVR -D{build.usbtype} -DLAYOUT_{build.keylayout} {includes} "{source_file}"
+recipe.preproc.includes="{compiler.path}{build.command.g++}" -M -MG -MP -x c++ -w {build.flags.cpp} {build.flags.cpu} {build.flags.defs} -DARDUINO={runtime.ide.version} -DF_CPU={build.fcpu}  -DVARIANT={build.variant}   -DVARIANT_FLAG={build.variant.flag}   -DARDUINO_ARCH_AVR -D{build.usbtype} -DLAYOUT_{build.keylayout} {includes} "{source_file}"
 
 ## Preprocessor Macros
-recipe.preproc.macros="{compiler.path}{build.toolchain}{build.command.g++}" -E -CC -x c++ -w {compiler.cpp.flags} {build.flags.common} {build.flags.cpp} {build.flags.cpu} {build.flags.defs} -DARDUINO={runtime.ide.version} -DF_CPU={build.f_cpu}  -DVARIANT={build.variant}   -DVARIANT_FLAG={build.variant.flag}   -DARDUINO_ARCH_AVR -D{build.usbtype} -DLAYOUT_{build.keylayout} {includes} "{source_file}" -o "{preprocessed_file_path}"
+recipe.preproc.macros="{compiler.path}{build.command.g++}" -E -CC -x c++ -w {compiler.cpp.flags} {build.flags.common} {build.flags.cpp} {build.flags.cpu} {build.flags.defs} -DARDUINO={runtime.ide.version} -DF_CPU={build.f_cpu}  -DVARIANT={build.variant}   -DVARIANT_FLAG={build.variant.flag}   -DARDUINO_ARCH_AVR -D{build.usbtype} -DLAYOUT_{build.keylayout} {includes} "{source_file}" -o "{preprocessed_file_path}"
 
 ## Compile c++ files
-recipe.cpp.o.pattern="{compiler.path}{build.toolchain}{build.command.g++}" -c {build.flags.optimize} {build.flags.common} {build.flags.dep} {build.flags.cpp} {build.flags.cpu} {build.flags.defs} -DARDUINO={runtime.ide.version} -DF_CPU={build.f_cpu}  -DVARIANT={build.variant}   -DVARIANT_FLAG={build.variant.flag}   -DARDUINO_ARCH_AVR -D{build.usbtype} -DLAYOUT_{build.keylayout} {includes} "{source_file}" -o "{object_file}"
+recipe.cpp.o.pattern="{compiler.path}{build.command.g++}" -c {build.flags.optimize} {build.flags.common} {build.flags.dep} {build.flags.cpp} {build.flags.cpu} {build.flags.defs} -DARDUINO={runtime.ide.version} -DF_CPU={build.f_cpu}  -DVARIANT={build.variant}   -DVARIANT_FLAG={build.variant.flag}   -DARDUINO_ARCH_AVR -D{build.usbtype} -DLAYOUT_{build.keylayout} {includes} "{source_file}" -o "{object_file}"
 
 ## Compile c files
-recipe.c.o.pattern="{compiler.path}{build.toolchain}{build.command.gcc}" -c {build.flags.optimize} {build.flags.common} {build.flags.dep} {build.flags.c} {build.flags.cpu} {build.flags.defs} -DARDUINO={runtime.ide.version} -DF_CPU={build.f_cpu}  -DVARIANT={build.variant}   -DVARIANT_FLAG={build.variant.flag}   -DARDUINO_ARCH_AVR -D{build.usbtype} -DLAYOUT_{build.keylayout} {includes} "{source_file}" -o "{object_file}"
+recipe.c.o.pattern="{compiler.path}{build.command.gcc}" -c {build.flags.optimize} {build.flags.common} {build.flags.dep} {build.flags.c} {build.flags.cpu} {build.flags.defs} -DARDUINO={runtime.ide.version} -DF_CPU={build.f_cpu}  -DVARIANT={build.variant}   -DVARIANT_FLAG={build.variant.flag}   -DARDUINO_ARCH_AVR -D{build.usbtype} -DLAYOUT_{build.keylayout} {includes} "{source_file}" -o "{object_file}"
 
 ## Compile S files
-recipe.S.o.pattern="{compiler.path}{build.toolchain}{build.command.gcc}" -c {build.flags.optimize} {build.flags.common} {build.flags.dep} {build.flags.S} {build.flags.cpu} {build.flags.defs} -DARDUINO={runtime.ide.version} -DF_CPU={build.f_cpu}  -DVARIANT={build.variant}   -DVARIANT_FLAG={build.variant.flag}   -DARDUINO_ARCH_AVR -D{build.usbtype} -DLAYOUT_{build.keylayout} {includes} "{source_file}" -o "{object_file}"
+recipe.S.o.pattern="{compiler.path}{build.command.gcc}" -c {build.flags.optimize} {build.flags.common} {build.flags.dep} {build.flags.S} {build.flags.cpu} {build.flags.defs} -DARDUINO={runtime.ide.version} -DF_CPU={build.f_cpu}  -DVARIANT={build.variant}   -DVARIANT_FLAG={build.variant.flag}   -DARDUINO_ARCH_AVR -D{build.usbtype} -DLAYOUT_{build.keylayout} {includes} "{source_file}" -o "{object_file}"
 
 ## Create archives
-recipe.ar.pattern="{compiler.path}{build.toolchain}{build.command.ar}" rcs "{build.path}/core/{archive_file}" "{object_file}"
+recipe.ar.pattern="{compiler.path}{build.command.ar}" rcs "{build.path}/core/{archive_file}" "{object_file}"
 
 ## Link
-recipe.c.combine.pattern="{compiler.path}{build.toolchain}{build.command.gcc}" {build.flags.optimize} {build.flags.ld} {build.flags.ldspecs} {build.flags.cpu} -o "{build.path}/{build.project_name}.elf" {object_files} "{build.path}/{archive_file}" "-L{build.path}" {build.flags.libs}
+recipe.c.combine.pattern="{compiler.path}{build.command.gcc}" {build.flags.optimize} {build.flags.ld} {build.flags.ldspecs} {build.flags.cpu} -o "{build.path}/{build.project_name}.elf" {object_files} "{build.path}/{archive_file}" "-L{build.path}" {build.flags.libs}
 
 ## Patch ELF - TODO: not supported by Arduino 1.6.6 builder
 recipe.elfpatch.pattern="{compiler.path}/hardware/tools/{build.elfpatch}" -mmcu={build.mcu} "{build.path}/{build.project_name}.elf" "{sketch_path}/disk"
 
 ## Create eeprom
-recipe.objcopy.eep.pattern="{compiler.path}{build.toolchain}{build.command.objcopy}" {compiler.objcopy.eep.flags} "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.eep"
+recipe.objcopy.eep.pattern="{compiler.path}{build.command.objcopy}" {compiler.objcopy.eep.flags} "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.eep"
 
 ## Create hex
-recipe.objcopy.hex.pattern="{compiler.path}{build.toolchain}{build.command.objcopy}" {compiler.elf2hex.flags} "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.hex"
+recipe.objcopy.hex.pattern="{compiler.path}{build.command.objcopy}" {compiler.elf2hex.flags} "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.hex"
 
 ## Post Build - inform Teensy Loader of new file
 recipe.hooks.postbuild.1.pattern=
 #"{compiler.path}/teensy_post_compile" "-file={build.project_name}" "-path={build.path}" "-tools={compiler.path}" "-board={build.board}"
 
 ## Compute size
-recipe.size.pattern="{compiler.path}{build.toolchain}{build.command.size}" -A "{build.path}/{build.project_name}.elf"
+recipe.size.pattern="{compiler.path}{build.command.size}" -A "{build.path}/{build.project_name}.elf"
 recipe.size.regex=^(?:\.text|\.data|\.bootloader)\s+([0-9]+).*
 recipe.size.regex.data=^(?:\.usbdescriptortable|\.dmabuffers|\.usbbuffers|\.data|\.bss|\.noinit)\s+([0-9]+).*
 recipe.size.regex.eeprom=^(?:\.eeprom)\s+([0-9]+).*
