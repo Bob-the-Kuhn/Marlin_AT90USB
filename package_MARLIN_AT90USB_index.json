@@ -18,7 +18,7 @@
             "online": "https://github.com/Bob-the-Kuhn/Marlin_AT90USB/"
           },
           "url": "https://github.com/Bob-the-Kuhn/Marlin_AT90USB/blob/master/Marlin_AT90USB.zip",
-          "archiveFileName": "Sanguino-1.0.0.zip",
+          "archiveFileName": "Marlin_AT90USB.zip",
           "checksum": "SHA-256:d85b880ab0c9116dea850743f4e5fa9705b90cf442b4e43a47040a928c224cf1",
           "size": "112785",
           "boards": [
