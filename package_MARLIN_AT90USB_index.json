@@ -15,7 +15,7 @@
           "version": "1.0.0",
           "category": "Contributed",
           "help": {
-            "online": "https://github.com/Bob-the-Kuhn/Marlin_AT90USB/"
+            "online": "https://github.com/Bob-the-Kuhn/Marlin_AT90USB"
           },
           "url": "https://github.com/Bob-the-Kuhn/Marlin_AT90USB/blob/master/Marlin_AT90USB.zip",
           "archiveFileName": "Marlin_AT90USB.zip",
@@ -41,7 +41,7 @@
           ]
         },
       ],
-      "tools": []
+      "tools":[]
     }
   ]
 }
