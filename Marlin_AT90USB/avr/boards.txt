@@ -5,29 +5,11 @@
 #  framework that made it easier to support the AT90USB646 &
 #  AT90USB1286 controllers supported by Marlin
 
-#  Many thanks to ?? for providing an elegant bootloader system.
+#  Many thanks to scwimbush for providing an elegant bootloader system.
+#    https://github.com/scwimbush/Printrboard-HID-Arduino-IDE-Support
 
 ##############################################################
 
-#  EXPERIMENTAL
-
-#   VARIENT_FLAG (build.variant.flag) was created to allow the
-#   pins_xxx.h files to select the pin definitions based on the
-#   variant being used.
-
-#   Tried to use VARIANT (build.variant) as a flag but its value
-#   was set in the variant file.  That happens after the pins_xxx.h
-#   file is processed.  The results was VARIANT was always zero
-#   when the pins_xxx.h file is processed.
-
-#   VARIENT_FLAG is set when the boards.txt file is processed. This
-#   happens before the pins_xxx.h file is processed.
-
-#   Current definitions:
-#      2 - FASTIO_TEENSYPP
-#      3 - FASTIO_STANDARD
-
-##############################################################
 
 #  uses TEENSYPP pinout (48 pin version)
 
@@ -52,23 +34,7 @@ AT90USB1286_TEENSYPP.build.variant=FASTIO_TEENSYPP
 AT90USB1286_TEENSYPP.build.variant.flag=2
 AT90USB1286_TEENSYPP.build.mcu=at90usb1286
 AT90USB1286_TEENSYPP.build.warn_data_percentage=94
-AT90USB1286_TEENSYPP.build.command.gcc=avr-gcc
-AT90USB1286_TEENSYPP.build.command.g++=avr-g++
-AT90USB1286_TEENSYPP.build.command.ar=avr-ar
-AT90USB1286_TEENSYPP.build.command.objcopy=avr-objcopy
-AT90USB1286_TEENSYPP.build.command.objdump=avr-objdump
-AT90USB1286_TEENSYPP.build.command.size=avr-size
-AT90USB1286_TEENSYPP.build.flags.common=-g -Wall -ffunction-sections -fdata-sections
-AT90USB1286_TEENSYPP.build.flags.dep=-MMD
-AT90USB1286_TEENSYPP.build.flags.optimize=-Os
-AT90USB1286_TEENSYPP.build.flags.cpu=-mmcu=at90usb1286
-AT90USB1286_TEENSYPP.build.flags.defs=-DTEENSYPPDUINO=127
-AT90USB1286_TEENSYPP.build.flags.cpp=-fno-exceptions -felide-constructors -std=c++0x
-AT90USB1286_TEENSYPP.build.flags.c=
-AT90USB1286_TEENSYPP.build.flags.S=-x assembler-with-cpp
-AT90USB1286_TEENSYPP.build.flags.ld=-Wl,--gc-sections,--relax
-AT90USB1286_TEENSYPP.build.flags.ldspecs=
-AT90USB1286_TEENSYPP.build.flags.libs=-lm
+
 AT90USB1286_TEENSYPP.build.serial_number=true
 AT90USB1286_TEENSYPP.serial.restart_cmd=true
 
@@ -98,24 +64,7 @@ AT90USB646_TEENSYPP.build.core=FASTIO
 AT90USB646_TEENSYPP.build.variant=FASTIO_TEENSYPP
 AT90USB646_TEENSYPP.build.variant.flag=2
 AT90USB646_TEENSYPP.build.mcu=at90usb646
-AT90USB646_TEENSYPP.build.warn_data_percentage=94
-AT90USB646_TEENSYPP.build.command.gcc=avr-gcc
-AT90USB646_TEENSYPP.build.command.g++=avr-g++
-AT90USB646_TEENSYPP.build.command.ar=avr-ar
-AT90USB646_TEENSYPP.build.command.objcopy=avr-objcopy
-AT90USB646_TEENSYPP.build.command.objdump=avr-objdump
-AT90USB646_TEENSYPP.build.command.size=avr-size
-AT90USB646_TEENSYPP.build.flags.common=-g -Wall -ffunction-sections -fdata-sections
-AT90USB646_TEENSYPP.build.flags.dep=-MMD
-AT90USB646_TEENSYPP.build.flags.optimize=-Os
-AT90USB646_TEENSYPP.build.flags.cpu=-mmcu=at90usb646
-AT90USB646_TEENSYPP.build.flags.defs=-DTEENSYPPDUINO=127
-AT90USB646_TEENSYPP.build.flags.cpp=-fno-exceptions -felide-constructors -std=c++0x
-AT90USB646_TEENSYPP.build.flags.c=
-AT90USB646_TEENSYPP.build.flags.S=-x assembler-with-cpp
-AT90USB646_TEENSYPP.build.flags.ld=-Wl,--gc-sections,--relax
-AT90USB646_TEENSYPP.build.flags.ldspecs=
-AT90USB646_TEENSYPP.build.flags.libs=-lm
+AT90USB646_TEENSYPP.build.warn_data_percentage=94\
 AT90USB646_TEENSYPP.build.serial_number=true
 AT90USB646_TEENSYPP.serial.restart_cmd=true
 

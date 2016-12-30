@@ -1,0 +1,60 @@
+Building a JSON package (Windows 10)
+
+1)  create the following structure.  Notice that there are NO intermediate
+    directories (no AVR, no HARDWARE, no version)
+
+     Marlin_AT90USB
+        bootloaders
+        cores
+        tools
+        variants
+        000_READ_ME.txt
+        boards.txt
+        platform.txt
+        
+2)  Click on the Marlin_AT90USB directory & ZIP it.   
+     
+     
+3)  create the preliminary JSON file
+
+      Go to https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.6.x-package_index.json-format-specification
+      and copy one of the example JSON files.
+      
+      Give it the final name.
+
+4)  upload the ZIP file and the preliminary JSON file to GITHUB
+
+5)  Create downloadable links (don't have to go through GITHUB to get the files)
+
+      a. Go to http://rawgit.com/
+      b. Right click on the JSON file in GITHUB and copy the shortcut
+      d. paste the shortcut into RAWGIT
+      e. copy the resulting link
+          It's what is used by Boards Manager to install the package
+          This is what you publish for users that want to install the extension
+      f. Right click on the ZIP file in GITHUB and copy the shortcut
+      d. paste the shortcut into RAWGIT
+      e. copy the resulting link
+          This link goes into the final JSON file
+          
+      You're done using RAWGIT.  Updates to the ZIP and JSON are automatically
+      propagated.
+
+6)  Get the info needed for the JSON file for the ZIP
+    
+      a. Right click on the ZIP file, then select Properties then copy the Size bytes
+         (not the Size on disk).  This, without the comma, goes into the JSON file.
+      b. download the "md5deep" package and extract the "sha256deep64.exe" utility
+      c. for convenience, put the ZIP file and sha256deep64.exe into a directory
+      d. open a command window and navigate to the directory
+      e. execute the following command
+          sha256deep64.exe  Marlin_AT90USB.zip
+      f. copy the result
+
+7)  Update the JSON file with the final info
+
+8)  Upload the final JSON file to GITHUB
+
+       It takes about a minute for the final JSON file to be available via RAWGIT
+       
+9)  Test       

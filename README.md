@@ -1,10 +1,17 @@
 # Marlin_AT90USB
 Arduino IDE support for Marlin boards using the AT90USB646 &amp; At90USB1286 
 
-To add AT90USB646 &amp; AT90USB1286 support to Arduino 1.6.x:
- 1. download the ZIP file   
- 2. unzip the file   
- 3. copy the Marlin_AT90USB directory to the Arduino hardware directory
+To add AT90USB646 &amp; AT90USB1286 support to Arduino 1.6.x or later:
+
+  Automatic - paste this URL into preferences and then use Boards manager
+  
+    https://rawgit.com/Bob-the-Kuhn/Marlin_AT90USB/master/package_MARLIN_AT90USB_index.json
+  
+  Manual:
+  
+    1. download the ZIP file   
+    2. unzip the file   
+    3. copy the Marlin_AT90USB directory to the Arduino hardware directory
 
  
 **USAGE**
@@ -12,12 +19,15 @@ This extension supports both the "standard" and the "Teensyduino Teensy++ 2.0" p
 
 Selection of the pin map is done by 
 
-1. enabling/disabling the "AT90USBxx_TEENSYPP_ASSIGNMENTS" flag in fastio.h 
-2. selecting the appropriate board in the Arduino TOOLS menu:
+  1. enabling/disabling the "AT90USBxx_TEENSYPP_ASSIGNMENTS" flag in fastio.h 
+  2. selecting the appropriate board in the Arduino TOOLS menu:
 
        AT90USB1286_TEENSYPP
+       
        AT90USB646_TEENSYPP
+       
        AT90USB1286_STANDARD
+       
        AT90USB646_STANDARD
   
 The Rev B pinsXXX.h files will warn you if the pin map selections are inconsistent.
