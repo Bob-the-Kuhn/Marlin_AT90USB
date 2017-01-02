@@ -15,6 +15,9 @@ Because of this we've made PWM0A available rather than PWM1C.
 
 The only change in the core was to strip Dwengo specific items from the USBCore.cpp file.
 
+The "libraries" folder was copied from Arduino 1.6.12.  This was because "PRINTRBOARD REV H"
+required "wire.h" but was unable to find it.
+
 http://www.dwengo.org/sites/default/files/package_dwengo.org_dwenguino_index.json
 
 https://github.com/scwimbush/Printrboard-HID-Arduino-IDE-Support
